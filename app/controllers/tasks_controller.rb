@@ -3,7 +3,7 @@ class TasksController < ApplicationController
 
   # GET /tasks or /tasks.json
   def index
-    @tasks = Task.all
+    set_page_and_extract_portion_from Task.order(created_at: :desc)
   end
 
   # GET /tasks/1 or /tasks/1.json
